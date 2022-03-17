@@ -38,6 +38,10 @@ mongoose
     if (rigatoni) {
       console.log('Rigatoni updated!')
     }
+    const carrotCake = await Recipe.deleteOne({ title: 'Carrot Cake' })
+    if (carrotCake) {
+      console.log('Carrot Cake deleted!')
+    }
   })
   .catch((error) => {
     console.error('Error connecting to the database', error)

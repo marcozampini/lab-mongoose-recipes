@@ -27,6 +27,10 @@ mongoose
       duration: 60,
       creator: 'Marco Zampini',
     })
+    const recipesFromFile = await Recipe.insertMany(data)
+    recipesFromFile.forEach((rec) => {
+      console.log(rec.title)
+    })
   })
   .catch((error) => {
     console.error('Error connecting to the database', error)

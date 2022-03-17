@@ -42,6 +42,7 @@ mongoose
     if (carrotCake) {
       console.log('Carrot Cake deleted!')
     }
+    mongoose.connection.close()
   })
   .catch((error) => {
     console.error('Error connecting to the database', error)

@@ -31,6 +31,13 @@ mongoose
     recipesFromFile.forEach((rec) => {
       console.log(rec.title)
     })
+    const rigatoni = await Recipe.findOneAndUpdate(
+      { title: 'Rigatoni alla Genovese' },
+      { duration: 100 }
+    )
+    if (rigatoni) {
+      console.log('Rigatoni updated!')
+    }
   })
   .catch((error) => {
     console.error('Error connecting to the database', error)
